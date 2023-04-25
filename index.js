@@ -1,4 +1,5 @@
 require('dotenv').config();
+const compression = require('compression')
 const express = require('express');
 const cookieParser = require("cookie-parser");
 const cors = require('cors');
@@ -6,7 +7,7 @@ const app = express();
 const router = require('./routers');
 const credentials = require('./middlewares/credentials');
 
-
+app.use(compression())
 // i use the credentials middleware
 app.use(credentials);
 // i use cors to allow the front to access the back

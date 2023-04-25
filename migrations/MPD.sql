@@ -14,7 +14,7 @@ CREATE TABLE "user" (
     "password" TEXT NOT NULL,
     "nickname" TEXT NOT NULL,
     "avatar" TEXT,
-    "role" TEXT DEFAULT 'user';
+    "role" TEXT DEFAULT 'user'
 );
 
 CREATE TABLE "quiz" (
