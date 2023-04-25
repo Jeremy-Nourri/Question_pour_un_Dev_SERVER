@@ -31,7 +31,7 @@ app.get('*', (_req, res) => {
 });
 
 // i use the port 3000 or the port defined in the .env file
-const port = `$PORT`
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Listening at http://0.0.0.0:${port}`);
+  console.log(`Listening at http://localhost:${port}`);
 });
