@@ -26,8 +26,12 @@ app.use(express.json({ limit: '50mb' }));
 // i use the router
 app.use(router);
 
+app.get('*', (_req, res) => {
+    res.status(404).json({ error: 'Page not found' });
+});
+
 // i use the port 3000 or the port defined in the .env file
-const port = process.env.PORT || 3000;
+const port = `$PORT`
 app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+  console.log(`Listening at http://0.0.0.0:${port}`);
 });
