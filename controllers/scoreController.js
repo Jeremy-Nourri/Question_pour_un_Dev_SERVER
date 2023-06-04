@@ -48,12 +48,19 @@ const scoreController = {
 
     async addScore (req, res) {
         try {
-            const score = await Score.create({ ...req.body });
-            res.status(200).json(score);
-        } catch (error) {
+            const score = await Score.create({
+                score: req.body.score,
+                userId: req.body.userId,
+                quizId: req.body.quizId,
+                difficultyId: req.body.difficultyId,
+            });
+            res.status(201).json(score);
+        }
+        catch (error) {
             res.status(500).json(`Désolé, une erreur serveur s'est produite lors de l'enregistrement de ton score.`)
         }
     },
+    
     async modifyScore (req, res) {
         try {
             const score = await Score.findByPk(req.params.id);

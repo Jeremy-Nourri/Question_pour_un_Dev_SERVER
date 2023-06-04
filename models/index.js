@@ -47,12 +47,6 @@ Score.belongsTo(Quiz);
 // a score belongs to a difficulty
 Score.belongsTo(Difficulty);
 
-// a score belongs to a question
-Score.belongsTo(Question);
-
-// a score belongs to an answer
-Score.belongsTo(Answer);
-
 
 module.exports = {
     Answer,
