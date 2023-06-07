@@ -3,7 +3,7 @@ const { User } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const expiryDate = new Date(Date.now() + 60 * 60 * 1000)
+const expiryDate = new Date(Date.now() + 60 * 60 * 7000)
 
 const authController = {
 
@@ -58,6 +58,7 @@ const authController = {
                     res.status(200).json({
                         id: user.id,
                         nickname: user.nickname,
+                        avatar: user.avatar,
                     });
 
                 } catch (error) {

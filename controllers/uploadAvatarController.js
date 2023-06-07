@@ -22,7 +22,9 @@ const uploadAvatarController = {
             });
             user.avatar = result.secure_url;
             await user.save();
-            res.status(200).json(user.avatar);
+            res.status(200).json({
+                avatar: user.avatar
+            });
         }
         catch (error) {
             console.error(error);

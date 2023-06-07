@@ -4,14 +4,14 @@ const sequelize = new Sequelize(
   process.env.PG_DB, 
   process.env.PG_USER, 
   process.env.PG_PASSWORD, {
-    host: 'devquiz.cwxlnkomu9ar.eu-west-3.rds.amazonaws.com',
+    host: 'localhost',
     dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    },
+    // dialectOptions: {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false
+    //   }
+    // },
     define: {
       freezeTableName: true,
       timestamps: false

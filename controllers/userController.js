@@ -4,13 +4,19 @@ const userController = {
 
     async getUser (req, res) {
         try {
-            const userId = parseInt(req.params.id);
+            const userId = parseInt(req.params.userId, 10);
             const user = await User.findByPk(userId);
             if (!user) {
                 res.status(404).json(`Désolé, nous n'avons pas trouvé d'utilisateur avec cet identifiant`);
                 return
             }
-            res.status(200).json(user);
+            res.status(200).json({
+                id: user.id,
+                nickname: user.nickname,
+                avatar: user.avatar,
+                email: user.email,               
+            }
+            );
         }
         catch (error) {           
             res.status(500).json(`Désolé, une erreur serveur s'est produite lors de la récupération de l'utilisateur.`);

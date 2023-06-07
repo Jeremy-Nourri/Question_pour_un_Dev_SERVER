@@ -16,7 +16,7 @@ mainRouter.get('/', (_req, res) => {
   res.send('Bienvenue sur une question pour un dév !');
 });
 
-mainRouter.post('/uploads', uploadAvatarController.uploadAvatar);
+mainRouter.patch('/uploads', uploadAvatarController.uploadAvatar);
 
 mainRouter.get('/question', questionController.getAllQuestion);
 mainRouter.get('/question/:quizId/:difficultyId', questionController.getQuestions);
@@ -30,7 +30,7 @@ mainRouter.get('/quiz/:id', quizController.getQuizById);
 // mainRouter.patch('/quiz/:id', quizController.modifyQuiz);
 // mainRouter.delete('/quiz/:id', quizController.deleteQuiz);
 
-mainRouter.get('/user/:id', authToken, userController.getUser);
+mainRouter.get('/user/:userId', authToken, userController.getUser);
 mainRouter.delete('/user/:userId/delete', authToken, userController.deleteUser);
 mainRouter.post('/user/:userId/avatar', authToken, userController.modifyAvatar);
 
