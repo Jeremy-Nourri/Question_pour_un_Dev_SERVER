@@ -1,4 +1,4 @@
-## Question pour un Dev - Back-end :
+## Question pour un Dev :
 J'ai initié ce projet personnel afin de mettre en œuvre les compétences que j'ai acquises durant ma formation de développeur full stack JavasScript.  
 La partie serveur API a été développée en utilisant l'environnement d'exécution JavaScript NodeJS et le framework express.  
 J'ai appliqué le design pattern MVC pour séparer les responsabilités entre la logique métier et le traitement des requêtes. 
